@@ -85,3 +85,34 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.onclick = () => card.classList.toggle('flipped');
+                card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="info-id">#${c.id}</div>
+                            <img src="${c.img}" class="cap-img" onerror="this.src='https://via.placeholder.com/150?text=Image+Manquante'">
+                            <div class="info-country">${c.country}</div>
+                        </div>
+                        <div class="card-back">
+                            <img src="${c.logo}" class="logo-img" onerror="this.style.display='none'">
+                            <div class="info-skirt">${c.skirt || 'Pas d\'info'}</div>
+                            <div class="info-page">Classeur: ${c.page}</div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterData() {
+            const txt = document.getElementById('searchInput').value.toLowerCase();
+            const country = document.getElementById('countrySelect').value;
+            const filtered = allCapsules.filter(c => {
+                const matchTxt = c.id.includes(txt) || (c.skirt && c.skirt.toLowerCase().includes(txt));
+                const matchCountry = country === "" || c.country === country;
+                return matchTxt && matchCountry;
+            });
+            display(filtered);
+        }
+    </script>
+</body>
+</html>
