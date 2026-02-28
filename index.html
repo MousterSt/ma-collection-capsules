@@ -5,42 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ma Collection de Capsules</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #eef2f3; margin: 0; padding: 0; }
-        .header { background: #2c3e50; color: white; padding: 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); text-align: center; }
-        .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        body { font-family: sans-serif; background: #f4f4f4; text-align: center; margin:0; padding:0; }
+        .header { background: white; padding: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 15px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: auto; }
-
-        /* Style des cartes qui se retournent */
-        .card { width: 160px; height: 220px; perspective: 1000px; cursor: pointer; margin: auto; }
-        .card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
-        .card.flipped .card-inner { transform: rotateY(180deg); }
+        /* Style fidèle à ton premier script qui marchait */
+        .card { background: white; border-radius: 10px; padding: 10px; width: 160px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; }
+        .cap-img { width: 130px; height: 130px; object-fit: contain; }
+        .logo-img { width: 80px; height: 40px; object-fit: contain; margin-top: 5px; }
+        .info { font-size: 0.85em; margin-top: 5px; }
         
-        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 15px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box; }
-        .card-back { transform: rotateY(180deg); background: #f9f9f9; color: #333; }
-
-        .cap-img { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); }
-        .logo-img { max-width: 80%; max-height: 60px; object-fit: contain; margin-bottom: 10px; }
-        
-        .info-id { font-weight: bold; color: #2c3e50; font-size: 1.1em; margin-bottom: 5px; }
-        .info-country { font-size: 0.8em; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
-        .info-skirt { font-size: 0.85em; font-style: italic; color: #34495e; padding: 5px; text-align: center; }
-        .info-page { margin-top: auto; font-size: 0.75em; background: #34495e; color: white; padding: 3px 10px; border-radius: 10px; }
-
-        input, select { padding: 10px; border-radius: 20px; border: none; outline: none; }
-        @media (max-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; } .card { width: 100%; height: 200px; } .cap-img { width: 90px; height: 90px; } }
+        input, select { padding: 8px; border-radius: 5px; border: 1px solid #ccc; margin: 5px; }
+        .hidden { display: none; } /* Pour cacher le verso au début */
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>Ma Collection 🍻</h1>
-        <div class="controls">
-            <input type="text" id="searchInput" placeholder="Rechercher ID ou texte..." onkeyup="filterData()">
-            <select id="countrySelect" onchange="filterData()">
-                <option value="">Tous les pays</option>
-            </select>
-        </div>
+        <input type="text" id="searchInput" placeholder="Rechercher ID..." onkeyup="filterData()">
+        <select id="countrySelect" onchange="filterData()">
+            <option value="">Tous les pays</option>
+        </select>
     </div>
 
     <div class="grid" id="capsuleGrid"></div>
@@ -48,18 +34,19 @@
     <script>
         let allCapsules = [];
 
+        // Chargement identique à ta première version réussie
         fetch('capsules_local.csv')
             .then(res => res.text())
             .then(data => {
-                const lines = data.split('\n').filter(l => l.trim() !== '');
-                const headers = lines[0].split(',').map(h => h.trim());
-                
-                allCapsules = lines.slice(1).map(line => {
-                    const v = line.split(',').map(item => item.trim());
-                    return { id: v[0], country: v[1], img: v[2], logo: v[3], skirt: v[4], page: v[5] };
+                const rows = data.split('\n').filter(r => r.trim() !== '');
+                const headers = rows[0].split(','); // id, country, image_url, logo_url, skirt_text, binder_page
+
+                allCapsules = rows.slice(1).map(row => {
+                    const c = row.split(',');
+                    return { id: c[0], country: c[1], img: c[2], logo: c[3], skirt: c[4], page: c[5] };
                 });
 
-                // Tri par ID numérique
+                // Tri par ID pour que ce soit rangé
                 allCapsules.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
                 populateCountries();
@@ -68,13 +55,11 @@
 
         function populateCountries() {
             const select = document.getElementById('countrySelect');
-            const countries = [...new Set(allCapsules.map(c => c.country))].sort();
+            const countries = [...new Set(allCapsules.map(c => c.country))].filter(x => x).sort();
             countries.forEach(country => {
-                if(country) {
-                    let opt = document.createElement('option');
-                    opt.value = country; opt.textContent = country;
-                    select.appendChild(opt);
-                }
+                let opt = document.createElement('option');
+                opt.value = country; opt.textContent = country;
+                select.appendChild(opt);
             });
         }
 
@@ -84,19 +69,24 @@
             capsules.forEach(c => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.onclick = () => card.classList.toggle('flipped');
+                // Système de retournement simple au clic
+                card.onclick = function() {
+                    const front = this.querySelector('.front');
+                    const back = this.querySelector('.back');
+                    front.classList.toggle('hidden');
+                    back.classList.toggle('hidden');
+                };
+
                 card.innerHTML = `
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="info-id">#${c.id}</div>
-                            <img src="${c.img}" class="cap-img" onerror="this.src='https://via.placeholder.com/150?text=Image+Manquante'">
-                            <div class="info-country">${c.country}</div>
-                        </div>
-                        <div class="card-back">
-                            <img src="${c.logo}" class="logo-img" onerror="this.style.display='none'">
-                            <div class="info-skirt">${c.skirt || 'Pas d\'info'}</div>
-                            <div class="info-page">Classeur: ${c.page}</div>
-                        </div>
+                    <div class="front">
+                        <div style="font-weight:bold">#${c.id}</div>
+                        <img src="${c.img}" class="cap-img">
+                        <div class="info">${c.country}</div>
+                    </div>
+                    <div class="back hidden">
+                        <img src="${c.logo}" class="logo-img" onerror="this.style.display='none'">
+                        <div class="info" style="font-style:italic">${c.skirt || ''}</div>
+                        <div class="info" style="margin-top:10px; color:blue">Page: ${c.page}</div>
                     </div>
                 `;
                 grid.appendChild(card);
