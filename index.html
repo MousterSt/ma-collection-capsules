@@ -2,107 +2,86 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ma Collection de Capsules</title>
     <style>
-        body { font-family: sans-serif; background: #f4f4f4; text-align: center; }
-        .controls { background: white; padding: 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .card { background: white; border-radius: 10px; padding: 15px; width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .cap-img { width: 150px; height: 150px; object-fit: contain; border-radius: 50%; }
-        .logo-img { width: 80px; height: 50px; object-fit: contain; margin-top: 10px; display: block; margin-left: auto; margin-right: auto; }
-        .info { font-size: 0.9em; color: #555; margin-top: 10px; }
-        .skirt { font-style: italic; color: #888; font-size: 0.8em; }
-        select, input { padding: 8px; margin: 5px; border-radius: 5px; border: 1px solid #ddd; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #eef2f3; margin: 0; padding: 0; }
+        .header { background: #2c3e50; color: white; padding: 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); text-align: center; }
+        .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: auto; }
+
+        /* Style des cartes qui se retournent */
+        .card { width: 160px; height: 220px; perspective: 1000px; cursor: pointer; margin: auto; }
+        .card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .card.flipped .card-inner { transform: rotateY(180deg); }
+        
+        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 15px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box; }
+        .card-back { transform: rotateY(180deg); background: #f9f9f9; color: #333; }
+
+        .cap-img { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); }
+        .logo-img { max-width: 80%; max-height: 60px; object-fit: contain; margin-bottom: 10px; }
+        
+        .info-id { font-weight: bold; color: #2c3e50; font-size: 1.1em; margin-bottom: 5px; }
+        .info-country { font-size: 0.8em; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
+        .info-skirt { font-size: 0.85em; font-style: italic; color: #34495e; padding: 5px; text-align: center; }
+        .info-page { margin-top: auto; font-size: 0.75em; background: #34495e; color: white; padding: 3px 10px; border-radius: 10px; }
+
+        input, select { padding: 10px; border-radius: 20px; border: none; outline: none; }
+        @media (max-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; } .card { width: 100%; height: 200px; } .cap-img { width: 90px; height: 90px; } }
     </style>
 </head>
 <body>
 
-    <div class="controls">
-        <h1>Ma Collection de Capsules</h1>
-        <input type="text" id="searchInput" placeholder="Rechercher une capsule..." onkeyup="filterData()">
-        
-        <label for="countrySelect">Filtrer par Pays :</label>
-        <select id="countrySelect" onchange="filterData()">
-            <option value="">Tous les pays</option>
-        </select>
+    <div class="header">
+        <h1>Ma Collection 🍻</h1>
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Rechercher ID ou texte..." onkeyup="filterData()">
+            <select id="countrySelect" onchange="filterData()">
+                <option value="">Tous les pays</option>
+            </select>
+        </div>
     </div>
 
-    <div class="grid" id="capsuleGrid">
-        </div>
+    <div class="grid" id="capsuleGrid"></div>
 
     <script>
         let allCapsules = [];
 
-        // 1. Charger le fichier CSV
         fetch('capsules_local.csv')
-            .then(response => response.text())
+            .then(res => res.text())
             .then(data => {
-                const rows = data.split('\n').slice(1); // On saute l'en-tête
-                allCapsules = rows.filter(row => row.trim() !== '').map(row => {
-                    const cols = row.split(',');
-                    return {
-                        id: cols[0],
-                        country: cols[1],
-                        image_url: cols[2],
-                        logo_url: cols[3],
-                        skirt_text: cols[4],
-                        binder_page: cols[5]
-                    };
-                });
+                const lines = data.split('\n').filter(l => l.trim() !== '');
+                const headers = lines[0].split(',').map(h => h.trim());
                 
+                allCapsules = lines.slice(1).map(line => {
+                    const v = line.split(',').map(item => item.trim());
+                    return { id: v[0], country: v[1], img: v[2], logo: v[3], skirt: v[4], page: v[5] };
+                });
+
+                // Tri par ID numérique
+                allCapsules.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+
                 populateCountries();
-                displayCapsules(allCapsules);
+                display(allCapsules);
             });
 
-        // 2. Remplir le menu déroulant avec les pays uniques
         function populateCountries() {
             const select = document.getElementById('countrySelect');
             const countries = [...new Set(allCapsules.map(c => c.country))].sort();
             countries.forEach(country => {
                 if(country) {
                     let opt = document.createElement('option');
-                    opt.value = country;
-                    opt.innerHTML = country;
+                    opt.value = country; opt.textContent = country;
                     select.appendChild(opt);
                 }
             });
         }
 
-        // 3. Afficher les capsules
-        function displayCapsules(capsules) {
+        function display(capsules) {
             const grid = document.getElementById('capsuleGrid');
             grid.innerHTML = '';
             capsules.forEach(c => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.innerHTML = `
-                    <img src="${c.image_url}" class="cap-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
-                    <div class="info">
-                        <strong>#${c.id}</strong><br>
-                        ${c.country}<br>
-                        <span class="skirt">${c.skirt_text || ''}</span>
-                    </div>
-                    <img src="${c.logo_url}" class="logo-img" onerror="this.style.display='none'">
-                    <div class="info">Page: ${c.binder_page}</div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // 4. Filtrer par recherche ET par menu déroulant
-        function filterData() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const selectedCountry = document.getElementById('countrySelect').value;
-
-            const filtered = allCapsules.filter(c => {
-                const matchSearch = c.id.toLowerCase().includes(searchTerm) || 
-                                    (c.skirt_text && c.skirt_text.toLowerCase().includes(searchTerm));
-                const matchCountry = selectedCountry === "" || c.country === selectedCountry;
-                return matchSearch && matchCountry;
-            });
-
-            displayCapsules(filtered);
-        }
-    </script>
-</body>
-</html>
+                card.onclick = () => card.classList.toggle('flipped');
