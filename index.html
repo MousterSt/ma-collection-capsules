@@ -31495,76 +31495,55 @@
 // 1. Fonction pour créer le menu, compter les capsules et mettre à jour les stats
 function generateCountryMenu() {
     const grid = document.getElementById('capsuleGrid');
-    const cards = Array.from(grid.getElementsByClassName('card'));
     const select = document.getElementById('filterCountry');
     const statsContainer = document.querySelector('.stats');
     
+    if (!grid || !select) return;
+
+    const cards = Array.from(grid.getElementsByClassName('card'));
     let countryCounts = {};
     let totalCapsules = cards.length;
     
     cards.forEach(card => {
         let c = card.getAttribute('data-country');
         if (c) {
-            // Nettoyage des espaces superflus pour éviter les doublons
-            c = c.trim(); 
             countryCounts[c] = (countryCounts[c] || 0) + 1;
         }
     });
 
-    // Tri alphabétique intelligent (gère les accents comme É, È, Ç)
+    // Tri alphabétique qui gère les accents (A, B, C, É, E...)
     let countries = Object.keys(countryCounts).sort((a, b) => {
         return a.localeCompare(b, 'fr', { sensitivity: 'base' });
     });
 
-    let totalCountries = countries.length;
-
+    // Mise à jour de la bannière 📊
     if (statsContainer) {
-        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${totalCountries}</strong> pays`;
+        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${countries.length}</strong> pays`;
     }
 
-    if (select) {
-        select.innerHTML = '<option value="">Tous les pays</option>';
-        countries.forEach(country => {
-            let option = document.createElement('option');
-            option.value = country;
-            // On affiche le nom du pays tel quel
-            option.textContent = `${country} (${countryCounts[country]})`;
-            select.appendChild(option);
-        });
-    }
+    // Remplissage du menu
+    select.innerHTML = '<option value="">Tous les pays</option>';
+    countries.forEach(country => {
+        let option = document.createElement('option');
+        option.value = country;
+        option.textContent = `${country} (${countryCounts[country]})`;
+        select.appendChild(option);
+    });
 }
 
-    let countries = Object.keys(countryCounts).sort();
-    let totalCountries = countries.length;
-
-    // Mise à jour de la bannière de statistiques en haut
-    if (statsContainer) {
-        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${totalCountries}</strong> pays`;
-    }
-
-    // Remplissage du menu déroulant avec les compteurs (ex: France (50))
-    if (select) {
-        select.innerHTML = '<option value="">Tous les pays</option>';
-        countries.forEach(country => {
-            let option = document.createElement('option');
-            option.value = country;
-            option.textContent = `${country} (${countryCounts[country]})`;
-            select.appendChild(option);
-        });
-    }
-}
-
-// 2. Fonction pour Filtrer (ID + Pays) et Trier
+// 2. Fonction pour Filtrer et Trier
 function filterAndSort() {
     const input = document.getElementById('searchInput').value.toLowerCase();
-    const countryFilter = document.getElementById('filterCountry').value.toLowerCase();
+    const countryFilter = document.getElementById('filterCountry').value;
     const sortOrder = document.getElementById('sortOrder').value;
     const grid = document.getElementById('capsuleGrid');
+    
+    if (!grid) return;
     const cards = Array.from(grid.getElementsByClassName('card'));
 
     cards.forEach(card => {
-        const id = card.getAttribute('data-id').toLowerCase();
-        const country = (card.getAttribute('data-country') || "").toLowerCase();
+        const id = (card.getAttribute('data-id') || "").toLowerCase();
+        const country = card.getAttribute('data-country') || "";
 
         const matchesSearch = id.includes(input);
         const matchesCountry = (countryFilter === "") || (country === countryFilter);
@@ -31579,17 +31558,16 @@ function filterAndSort() {
             let valB = parseInt(b.getAttribute('data-id')) || 0;
             return valA - valB;
         } else {
-            let valA = (a.getAttribute('data-country') || "").toLowerCase();
-            let valB = (b.getAttribute('data-country') || "").toLowerCase();
-            return valA.localeCompare(valB, 'fr', {sensitivity: 'base'});
+            let valA = a.getAttribute('data-country') || "";
+            let valB = b.getAttribute('data-country') || "";
+            return valA.localeCompare(valB, 'fr', { sensitivity: 'base' });
         }
     });
 
-    // Ré-injection dans la grille
     cards.forEach(card => grid.appendChild(card));
 }
 
-// 3. Lancement unique au chargement
+// 3. Lancement au chargement
 window.onload = function() {
     generateCountryMenu();
     filterAndSort();
@@ -31597,6 +31575,7 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
 
 
