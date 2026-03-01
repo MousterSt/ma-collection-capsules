@@ -43,15 +43,27 @@
     </style>
 </head>
 <body>
+    <div class="controls">
+    <input type="text" id="searchInput" placeholder="Rechercher par ID..." onkeyup="filterAndSort()">
+    
+    <select id="filterCountry" onchange="filterAndSort()">
+        <option value="">Tous les pays</option>
+        <option value="France">France</option>
+        <option value="Belgique">Belgique</option>
+        <option value="Plusieurs Pays">Plusieurs Pays</option>
+        </select>
+
+    <select id="sortOrder" onchange="filterAndSort()">
+        <option value="id">Trier par ID</option>
+        <option value="country">Trier par Pays</option>
+    </select>
+</div>
 
 <div class="header-container">
     <h1>Ma Collection de Capsules</h1>
     <div class="stats">📊 <strong>1257</strong> capsules | 🌍 <strong>44</strong> pays</div>
     <div class="controls">
         <input type="text" id="searchInput" onkeyup="filterAndSort()" placeholder="Rechercher un ID...">
-        <select id="countrySelect" onchange="filterData()">
-    <option value="">Tous les pays (Filtrer)</option>
-</select>
         <select id="sortOrder" onchange="filterAndSort()">
             <option value="id">Trier par ID</option>
             <option value="country">Trier par Pays</option>
@@ -31489,79 +31501,45 @@
     
 </div>
 <script>
-function filterAndSort() {{
+function filterAndSort() {
+    // 1. Récupération des valeurs des filtres
     let input = document.getElementById('searchInput').value.toLowerCase();
+    let countryFilter = document.getElementById('filterCountry').value.toLowerCase();
     let sortOrder = document.getElementById('sortOrder').value;
     let grid = document.getElementById('capsuleGrid');
     let cards = Array.from(grid.getElementsByClassName('card'));
 
-    cards.forEach(card => {{
+    cards.forEach(card => {
+        // 2. Récupération des données de la carte
         let id = card.getAttribute('data-id').toLowerCase();
-        card.style.display = id.includes(input) ? "" : "none";
-    }});
+        // On récupère le pays (assure-toi que data-country existe dans tes div class="card")
+        let country = card.getAttribute('data-country') ? card.getAttribute('data-country').toLowerCase() : "";
 
-    cards.sort((a, b) => {{
+        // 3. Logique de filtrage (Recherche ET Pays)
+        let matchesSearch = id.includes(input);
+        let matchesCountry = (countryFilter === "") || (country === countryFilter);
+
+        // 4. Affichage ou masquage
+        card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
+    });
+
+    // 5. Tri (ton code original)
+    cards.sort((a, b) => {
         let valA = a.getAttribute('data-' + sortOrder).toLowerCase();
         let valB = b.getAttribute('data-' + sortOrder).toLowerCase();
-        if (sortOrder === 'id') {{
+        if (sortOrder === 'id') {
             return (parseFloat(valA.split(' ')[0]) || 0) - (parseFloat(valB.split(' ')[0]) || 0);
-        }}
-        return valA.localeCompare(valB);
-    }});
-    cards.forEach(card => grid.appendChild(card));
-}}
-window.onload = filterAndSort;
-                // Cette fonction crée la liste des pays automatiquement
-function populateCountries() {
-    const select = document.getElementById('countrySelect');
-    // On récupère les pays, on enlève les doublons et on trie par A-Z
-    const countries = [...new Set(allCapsules.map(c => c.country))].filter(x => x).sort();
-    
-    countries.forEach(country => {
-        let opt = document.createElement('option');
-        opt.value = country;
-        opt.textContent = country;
-        select.appendChild(opt);
-    });
-}
-
-// Cette fonction remplace ta fonction filterData actuelle
-function filterData() {
-    const txt = document.getElementById('searchInput').value.toLowerCase();
-    const selectedCountry = document.getElementById('countrySelect').value;
-
-    const filtered = allCapsules.filter(c => {
-        const matchTxt = c.id.includes(txt) || (c.skirt && c.skirt.toLowerCase().includes(txt));
-        const matchCountry = selectedCountry === "" || c.country === selectedCountry;
-        return matchTxt && matchCountry;
-    });
-    display(filtered); // Affiche le résultat du double filtrage
-}
-                        // On attend 1 seconde que les données soient chargées, puis on trie
-setTimeout(() => {
-    if (typeof allCapsules !== 'undefined' && allCapsules.length > 0) {
-        // 1. On trie par ID
-        allCapsules.sort((a, b) => parseInt(a.id) - parseInt(b.id));
-        
-        // 2. On remplit le menu des pays
-        const select = document.getElementById('countrySelect');
-        if (select) {
-            const countries = [...new Set(allCapsules.map(c => c.country))].filter(x => x).sort();
-            countries.forEach(country => {
-                let opt = document.createElement('option');
-                opt.value = country;
-                opt.textContent = country;
-                select.appendChild(opt);
-            });
         }
-        
-        // 3. On rafraîchit l'affichage
-        display(allCapsules); 
-    }
-}, 1000);
+        return valA.localeCompare(valB);
+    });
+
+    // 6. Mise à jour de la grille
+    cards.forEach(card => grid.appendChild(card));
+}
+
+// Lancer le tri dès que la page est prête
+window.onload = filterAndSort;
 </script>
 </body>
 </html>
-
-
 
