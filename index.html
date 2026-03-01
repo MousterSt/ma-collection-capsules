@@ -31492,13 +31492,11 @@
     
 </div>
 <script>
-// 1. CETTE FONCTION CREE LA LISTE DES 44 PAYS TOUTE SEULE
+// Fonction pour remplir le menu avec tes 44 pays réels
 function generateCountryMenu() {
-    let grid = document.getElementById('capsuleGrid');
-    if (!grid) return;
-    let cards = Array.from(grid.getElementsByClassName('card'));
-    let select = document.getElementById('filterCountry');
-    if (!select) return;
+    const grid = document.getElementById('capsuleGrid');
+    const cards = Array.from(grid.getElementsByClassName('card'));
+    const select = document.getElementById('filterCountry');
     
     let countries = [];
     cards.forEach(card => {
@@ -31508,7 +31506,7 @@ function generateCountryMenu() {
         }
     });
 
-    // Trie et ajoute chaque pays au menu
+    // On trie par ordre alphabétique et on ajoute au menu
     countries.sort().forEach(country => {
         let option = document.createElement('option');
         option.value = country;
@@ -31517,48 +31515,50 @@ function generateCountryMenu() {
     });
 }
 
-// 2. CETTE FONCTION UNIQUE GERE LE FILTRE (ID + PAYS) ET LE TRI
+// Fonction unique pour Filtrer (ID + Pays) et Trier
 function filterAndSort() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let countryFilter = document.getElementById('filterCountry').value.toLowerCase();
-    let sortOrder = document.getElementById('sortOrder').value;
-    let grid = document.getElementById('capsuleGrid');
-    let cards = Array.from(grid.getElementsByClassName('card'));
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const countryFilter = document.getElementById('filterCountry').value.toLowerCase();
+    const sortOrder = document.getElementById('sortOrder').value;
+    const grid = document.getElementById('capsuleGrid');
+    const cards = Array.from(grid.getElementsByClassName('card'));
 
     cards.forEach(card => {
-        let id = card.getAttribute('data-id').toLowerCase();
-        let country = card.getAttribute('data-country') ? card.getAttribute('data-country').toLowerCase() : "";
+        const id = card.getAttribute('data-id').toLowerCase();
+        const country = (card.getAttribute('data-country') || "").toLowerCase();
 
-        // On vérifie les deux conditions en même temps
-        let matchesSearch = id.includes(input);
-        let matchesCountry = (countryFilter === "") || (country === countryFilter);
+        // On vérifie si ça match la recherche ET le pays sélectionné
+        const matchesSearch = id.includes(input);
+        const matchesCountry = (countryFilter === "") || (country === countryFilter);
 
-        // Affichage si les DEUX conditions sont vraies
         card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
     });
 
-    // Gestion du tri (ID numérique ou Pays alphabétique)
+    // Tri des cartes
     cards.sort((a, b) => {
         let valA = a.getAttribute('data-' + sortOrder).toLowerCase();
         let valB = b.getAttribute('data-' + sortOrder).toLowerCase();
+        
         if (sortOrder === 'id') {
-            return (parseFloat(valA.split(' ')[0]) || 0) - (parseFloat(valB.split(' ')[0]) || 0);
+            // Tri numérique pour les IDs
+            return (parseInt(valA) || 0) - (parseInt(valB) || 0);
         }
         return valA.localeCompare(valB);
     });
 
-    // On remet les cartes dans le bon ordre dans la grille
+    // On ré-injecte dans la grille pour appliquer le tri
     cards.forEach(card => grid.appendChild(card));
 }
 
-// 3. ON LANCE TOUT AU CHARGEMENT DE LA PAGE
+// Lancement automatique au chargement
 window.onload = function() {
-    generateCountryMenu(); // On crée d'abord le menu
-    filterAndSort();       // Puis on trie par ID par défaut
+    generateCountryMenu();
+    filterAndSort();
 };
 </script>
 </body>
 </html>
+
 
 
 
