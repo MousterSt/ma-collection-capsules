@@ -31501,8 +31501,32 @@
     
 </div>
 <script>
+// 1. Fonction pour créer le menu des 44 pays automatiquement
+function generateCountryMenu() {
+    let grid = document.getElementById('capsuleGrid');
+    let cards = Array.from(grid.getElementsByClassName('card'));
+    let select = document.getElementById('filterCountry');
+    
+    // On récupère tous les pays présents dans les data-country des cartes
+    let countries = [];
+    cards.forEach(card => {
+        let c = card.getAttribute('data-country');
+        if (c && !countries.includes(c)) {
+            countries.push(c);
+        }
+    });
+
+    // On trie les pays par ordre alphabétique
+    countries.sort().forEach(country => {
+        let option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        select.appendChild(option);
+    });
+}
+
+// 2. Ta fonction de filtrage et de tri mise à jour
 function filterAndSort() {
-    // 1. Récupération des valeurs des filtres
     let input = document.getElementById('searchInput').value.toLowerCase();
     let countryFilter = document.getElementById('filterCountry').value.toLowerCase();
     let sortOrder = document.getElementById('sortOrder').value;
@@ -31510,20 +31534,15 @@ function filterAndSort() {
     let cards = Array.from(grid.getElementsByClassName('card'));
 
     cards.forEach(card => {
-        // 2. Récupération des données de la carte
         let id = card.getAttribute('data-id').toLowerCase();
-        // On récupère le pays (assure-toi que data-country existe dans tes div class="card")
         let country = card.getAttribute('data-country') ? card.getAttribute('data-country').toLowerCase() : "";
 
-        // 3. Logique de filtrage (Recherche ET Pays)
         let matchesSearch = id.includes(input);
         let matchesCountry = (countryFilter === "") || (country === countryFilter);
 
-        // 4. Affichage ou masquage
         card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
     });
 
-    // 5. Tri (ton code original)
     cards.sort((a, b) => {
         let valA = a.getAttribute('data-' + sortOrder).toLowerCase();
         let valB = b.getAttribute('data-' + sortOrder).toLowerCase();
@@ -31533,13 +31552,16 @@ function filterAndSort() {
         return valA.localeCompare(valB);
     });
 
-    // 6. Mise à jour de la grille
     cards.forEach(card => grid.appendChild(card));
 }
 
-// Lancer le tri dès que la page est prête
-window.onload = filterAndSort;
+// 3. Au chargement : on génère le menu PUIS on trie
+window.onload = function() {
+    generateCountryMenu();
+    filterAndSort();
+};
 </script>
 </body>
 </html>
+
 
