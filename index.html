@@ -31495,7 +31495,6 @@
 // 1. Fonction pour créer le menu, compter les capsules et mettre à jour les stats
 function generateCountryMenu() {
     const grid = document.getElementById('capsuleGrid');
-    if (!grid) return;
     const cards = Array.from(grid.getElementsByClassName('card'));
     const select = document.getElementById('filterCountry');
     const statsContainer = document.querySelector('.stats');
@@ -31503,13 +31502,37 @@ function generateCountryMenu() {
     let countryCounts = {};
     let totalCapsules = cards.length;
     
-    // On compte les capsules par pays
     cards.forEach(card => {
         let c = card.getAttribute('data-country');
         if (c) {
+            // Nettoyage des espaces superflus pour éviter les doublons
+            c = c.trim(); 
             countryCounts[c] = (countryCounts[c] || 0) + 1;
         }
     });
+
+    // Tri alphabétique intelligent (gère les accents comme É, È, Ç)
+    let countries = Object.keys(countryCounts).sort((a, b) => {
+        return a.localeCompare(b, 'fr', { sensitivity: 'base' });
+    });
+
+    let totalCountries = countries.length;
+
+    if (statsContainer) {
+        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${totalCountries}</strong> pays`;
+    }
+
+    if (select) {
+        select.innerHTML = '<option value="">Tous les pays</option>';
+        countries.forEach(country => {
+            let option = document.createElement('option');
+            option.value = country;
+            // On affiche le nom du pays tel quel
+            option.textContent = `${country} (${countryCounts[country]})`;
+            select.appendChild(option);
+        });
+    }
+}
 
     let countries = Object.keys(countryCounts).sort();
     let totalCountries = countries.length;
@@ -31574,6 +31597,7 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
 
 
