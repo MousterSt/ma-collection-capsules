@@ -43,36 +43,27 @@
     </style>
 </head>
 <body>
-    <div class="controls">
-    <input type="text" id="searchInput" placeholder="Rechercher par ID..." onkeyup="filterAndSort()">
-    
-    <select id="filterCountry" onchange="filterAndSort()">
-        <option value="">Tous les pays</option>
-        <option value="France">France</option>
-        <option value="Belgique">Belgique</option>
-        <option value="Plusieurs Pays">Plusieurs Pays</option>
-        </select>
+    <div class="header-container">
+        <h1>Ma Collection de Capsules</h1>
+        <div class="stats">📊 <strong>1257</strong> capsules | 🌍 <strong>44</strong> pays</div>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" onkeyup="filterAndSort()" placeholder="Rechercher un ID...">
+            
+            <select id="filterCountry" onchange="filterAndSort()">
+                <option value="">Tous les pays</option>
+            </select>
 
-    <select id="sortOrder" onchange="filterAndSort()">
-        <option value="id">Trier par ID</option>
-        <option value="country">Trier par Pays</option>
-    </select>
-</div>
+            <select id="sortOrder" onchange="filterAndSort()">
+                <option value="id">Trier par ID</option>
+                <option value="country">Trier par Pays</option>
+            </select>
 
-<div class="header-container">
-    <h1>Ma Collection de Capsules</h1>
-    <div class="stats">📊 <strong>1257</strong> capsules | 🌍 <strong>44</strong> pays</div>
-    <div class="controls">
-        <input type="text" id="searchInput" onkeyup="filterAndSort()" placeholder="Rechercher un ID...">
-        <select id="sortOrder" onchange="filterAndSort()">
-            <option value="id">Trier par ID</option>
-            <option value="country">Trier par Pays</option>
-        </select>
-        <button class="print-btn" onclick="window.print()">🖨️ Imprimer la liste</button>
+            <button class="print-btn" onclick="window.print()">🖨️ Imprimer la liste</button>
+        </div>
     </div>
-</div>
 
-<div class="grid" id="capsuleGrid">
+    <div class="grid" id="capsuleGrid">
 
     <div class="card" data-id="17788" data-country="Plusieurs Pays">
         <div class="card-inner">
@@ -31568,6 +31559,7 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
 
 
