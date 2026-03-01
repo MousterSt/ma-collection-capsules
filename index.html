@@ -31534,16 +31534,19 @@ function filterAndSort() {
         card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
     });
 
-    // Tri des cartes
+  // Tri des cartes
     cards.sort((a, b) => {
-        let valA = a.getAttribute('data-' + sortOrder).toLowerCase();
-        let valB = b.getAttribute('data-' + sortOrder).toLowerCase();
-        
         if (sortOrder === 'id') {
             // Tri numérique pour les IDs
-            return (parseInt(valA) || 0) - (parseInt(valB) || 0);
+            let valA = parseInt(a.getAttribute('data-id')) || 0;
+            let valB = parseInt(b.getAttribute('data-id')) || 0;
+            return valA - valB;
+        } else {
+            // Tri alphabétique pour les pays (data-country)
+            let valA = (a.getAttribute('data-country') || "").toLowerCase();
+            let valB = (b.getAttribute('data-country') || "").toLowerCase();
+            return valA.localeCompare(valB, 'fr', {sensitivity: 'base'});
         }
-        return valA.localeCompare(valB);
     });
 
     // On ré-injecte dans la grille pour appliquer le tri
@@ -31558,6 +31561,7 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
 
 
