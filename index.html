@@ -31492,19 +31492,25 @@
     
 </div>
 <script>
-// Fonction pour remplir le menu avec tes 44 pays réels
+// 1. Fonction pour créer le menu ET mettre à jour les stats globales
 function generateCountryMenu() {
     const grid = document.getElementById('capsuleGrid');
     const cards = Array.from(grid.getElementsByClassName('card'));
     const select = document.getElementById('filterCountry');
+    const statsContainer = document.querySelector('.stats'); // La zone de texte 📊
     
-    let countries = [];
+    let countryCounts = {};
+    let totalCapsules = cards.length;
+    
     cards.forEach(card => {
         let c = card.getAttribute('data-country');
-        if (c && !countries.includes(c)) {
-            countries.push(c);
+        if (c) {
+            countryCounts[c] = (countryCounts[c] || 0) + 1;
         }
     });
+
+    let countries = Object.keys(countryCounts).sort();
+    let totalCountries = countries.length;
 
     // On trie par ordre alphabétique et on ajoute au menu
     countries.sort().forEach(country => {
@@ -31514,7 +31520,24 @@ function generateCountryMenu() {
         select.appendChild(option);
     });
 }
-
+// Mise à jour automatique de la bannière 📊 en haut
+    if (statsContainer) {
+        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${totalCountries}</strong> pays`;
+    }
+// Remplissage du menu déroulant
+    select.innerHTML = '<option value="">Tous les pays</option>';
+    countries.forEach(country => {
+        let option = document.createElement('option');
+        option.value = country;
+        option.textContent = `${country} (${countryCounts[country]})`;
+        select.appendChild(option);
+    });
+}
+// 2. Le chargement reste identique
+window.onload = function() {
+    generateCountryMenu();
+    filterAndSort();
+};
 // Fonction unique pour Filtrer (ID + Pays) et Trier
 function filterAndSort() {
     const input = document.getElementById('searchInput').value.toLowerCase();
@@ -31561,6 +31584,7 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
 
 
