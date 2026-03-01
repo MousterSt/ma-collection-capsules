@@ -2092,7 +2092,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 296010,France,images_capsules/296010.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,21
 259922,France,images_capsules/259922.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,21
 117006,France,images_capsules/117006.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
-201452,Royaume-Uni,https://ddxwnzii69fzh.cloudfront.net/caps/ba034551-785f-429c-a8a6-7d006c4c8214.jpg,logos_brasseries/242.1e03fcdc.png,"UNITED WE STAND FOR BETTER BEER . FIERCELY DEFIANT AND INDEPENDENT ".,21
+201452,Royaume-Uni,images_capsules/201452.jpg,logos_brasseries/242.1e03fcdc.png,"UNITED WE STAND FOR BETTER BEER . FIERCELY DEFIANT AND INDEPENDENT ".,21
 77117,Royaume-Uni,images_capsules/77117.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/51188618,21
 77117 (2),Royaume-Uni,images_capsules/77117 (2).jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51188618,21
 122355,Royaume-Uni,images_capsules/122355.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
@@ -2515,6 +2515,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 161476,Belgique,images_capsules/161476.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5211,29
 
 >>>>>>> ec23dd40a15c93aab5373f444f5a2451be78a606
+
 
 
 
