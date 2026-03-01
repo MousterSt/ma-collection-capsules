@@ -898,7 +898,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 268043,Belgique,images_capsules/268043.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,23
 253052,Belgique,images_capsules/253052.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,23
 110092,Espagne,images_capsules/110092.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/R6464 BO,23
-227491,France,https://ddxwnzii69fzh.cloudfront.net/caps/8f9f5b7a-0309-4b7a-8bec-eccb97f7c0c5.jpg,https://crowncaps.info/common/nofactorysign.png,"côte d'azur france . un territoire riche d'emotions,23
+227491,France,https://ddxwnzii69fzh.cloudfront.net/caps/8f9f5b7a-0309-4b7a-8bec-eccb97f7c0c5.jpg,https://crowncaps.info/common/nofactorysign.png,"côte d'azur france . un territoire riche d'emotions",23
 177592,France,images_capsules/177592.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/biÃ¨re du comtÃ© . tradicioun dou pais nissart . despi 2012,23
 177595,France,images_capsules/177595.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/biÃ¨re du comtÃ© . tradicioun dou pais nissart . despi 2012,23
 177586,France,images_capsules/177586.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/biÃ¨re du comtÃ© . tradicioun dou pais nissart . despi 2012,23
@@ -2516,3 +2516,4 @@ id,country,image_url,logo_url,skirt_text,binder_page
 161476,Belgique,images_capsules/161476.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5211,29
 
 >>>>>>> ec23dd40a15c93aab5373f444f5a2451be78a606
+
