@@ -75,7 +75,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 139196,Belgique,images_capsules/139196.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
 139203,Belgique,images_capsules/139203.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
 139199,Belgique,images_capsules/139199.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
-135972,RÃ©publique TchÃ¨que,images_capsules/135972.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
+135972,République Tchèque,images_capsules/135972.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
 259507,Belgique,images_capsules/259507.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,2
 26176,Belgique,images_capsules/26176.jpg,logos_brasseries/160.ec18aa4a.png,logos_brasseries/10 10 10 10 10 10 10 10,2
 26176 (2),Belgique,images_capsules/26176 (2).jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/10 10 10 10 10 10 10 10,2
@@ -94,7 +94,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 33132,Portugal,images_capsules/33132.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,3
 33132 (2),Portugal,images_capsules/33132 (2).jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,3
 167096,Belgique,images_capsules/167096.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,3
-254949,GrÃ¨ce,images_capsules/254949.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,3
+254949,Grèce,images_capsules/254949.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,3
 86051,Belgique,images_capsules/86051.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,3
 181299,Royaume-Uni,images_capsules/181299.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,3
 126529,Belgique,images_capsules/126529.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51187103,3
@@ -119,7 +119,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 156159,Belgique,images_capsules/156159.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,3
 160352,Espagne,images_capsules/160352.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/KC02315 BO,3
 131441,Espagne,images_capsules/131441.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/BO KC02312,3
-129773,RÃ©publique TchÃ¨que,images_capsules/129773.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/(crÃ¨me),3
+129773,République Tchèque,images_capsules/129773.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/(crÃ¨me),3
 234734,Belgique,images_capsules/234734.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,3
 125271,Allemagne,images_capsules/125271.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,3
 125271 (2),Allemagne,images_capsules/125271 (2).jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,3
@@ -304,7 +304,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 82016,France,images_capsules/82016.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,8
 69888,Belgique,images_capsules/69888.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,8
 307532,Pays-Bas,images_capsules/307532.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/25495,8
-209611,RÃ©publique TchÃ¨que,images_capsules/209611.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,8
+209611,République Tchèque,images_capsules/209611.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,8
 39569,Belgique,images_capsules/39569.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,8
 152579,Allemagne,images_capsules/152579.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,8
 307453,France,images_capsules/307453.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,8
@@ -355,7 +355,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 248156,France,images_capsules/248156.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,9
 51566,France,images_capsules/51566.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,9
 103802,Allemagne,images_capsules/103802.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,9
-52548,SuÃ¨de,images_capsules/52548.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,9
+52548,Suède,images_capsules/52548.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,9
 221546,Belgique,images_capsules/221546.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/(sticker bleu),9
 221546 (2),Belgique,images_capsules/221546 (2).jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/(sticker marron),9
 30473,Belgique,images_capsules/30473.jpg,logos_brasseries/160.ec18aa4a.png,logos_brasseries/*,9
@@ -401,7 +401,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 192045,France,images_capsules/192045.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,10
 161456,Belgique,images_capsules/161456.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,10
 161459,Belgique,images_capsules/161459.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,10
-281459,GrÃ¨ce,images_capsules/281459.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/225819,10
+281459,Grèce,images_capsules/281459.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/225819,10
 198805,Belgique,images_capsules/198805.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,10
 198805 (2),Belgique,images_capsules/198805 (2).jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,10
 172574,Belgique,images_capsules/172574.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,10
@@ -518,7 +518,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 41248 (2),Allemagne,images_capsules/41248 (2).jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,13
 272788,Belgique,images_capsules/272788.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/26297,13
 202364,Espagne,images_capsules/202364.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/KC01306 BO,13
-114492,GrÃ¨ce,images_capsules/114492.jpg,logos_brasseries/617.8420aa21.png,logos_brasseries/*,13
+114492,Grèce,images_capsules/114492.jpg,logos_brasseries/617.8420aa21.png,logos_brasseries/*,13
 311858,Plusieurs Pays,images_capsules/311858.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,13
 185532,Belgique,images_capsules/185532.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,13
 23427,Belgique,images_capsules/23427.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,13
@@ -542,7 +542,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 111387,Italie,images_capsules/111387.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,14
 74761,Italie,images_capsules/74761.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5213,14
 74761 (2),Italie,images_capsules/74761 (2).jpg,https://crowncaps.info/signs/151,logos_brasseries/916511,14
-177783,RÃ©publique TchÃ¨que,images_capsules/177783.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,14
+177783,République Tchèque,images_capsules/177783.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,14
 16664,France,images_capsules/16664.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,14
 16664 (2),France,images_capsules/16664 (2).jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/* (mate),14
 229785,France,images_capsules/229785.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/1250080,14
@@ -574,7 +574,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 333379,France,images_capsules/333379.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,14
 97346,France,images_capsules/97346.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,14
 198504,France,images_capsules/198504.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,14
-264895,Royaume-uni,images_capsules/264895.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,14
+264895,Royaume-Uni,images_capsules/264895.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,14
 334502,France,images_capsules/334502.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,15
 334793,France,images_capsules/334793.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,15
 334795,France,images_capsules/334795.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,15
@@ -684,7 +684,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 86885,Allemagne,images_capsules/86885.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
 156243,Belgique,images_capsules/156243.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,17
 172529,France,images_capsules/172529.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,17
-172607,RÃ©publique TchÃ¨que,images_capsules/172607.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,17
+172607,République Tchèque,images_capsules/172607.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,17
 64293,Italie,images_capsules/64293.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,17
 320468,France,images_capsules/320468.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
 144161,Belgique,images_capsules/144161.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
@@ -760,7 +760,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 54405,Belgique,images_capsules/54405.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,19
 132837,France,images_capsules/132837.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,19
 8324,Belgique,images_capsules/8324.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,19
-134001,RÃ©publique TchÃ¨que,images_capsules/134001.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,19
+134001,République Tchèque,images_capsules/134001.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,19
 167462,Pays-Bas,images_capsules/167462.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,19
 119956,France,images_capsules/119956.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,19
 65221,Belgique,images_capsules/65221.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,19
@@ -791,7 +791,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 159471 (2),Plusieurs Pays,images_capsules/159471 (2).jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/1069,20
 206479 (3),France,images_capsules/206479 (3).jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,20
 332052,Italie,images_capsules/332052.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,20
-111373,RÃ©publique TchÃ¨que,images_capsules/111373.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,20
+111373,République Tchèque,images_capsules/111373.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,20
 157080,France,images_capsules/157080.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,20
 23764,Allemagne,images_capsules/23764.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,20
 257868,Belgique,images_capsules/257868.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,20
@@ -836,12 +836,12 @@ id,country,image_url,logo_url,skirt_text,binder_page
 296010,France,images_capsules/296010.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,21
 259922,France,images_capsules/259922.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,21
 117006,France,images_capsules/117006.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
-201452,Royaume-Uni,https://ddxwnzii69fzh.cloudfront.net/caps/ba034551-785f-429c-a8a6-7d006c4c8214.jpg,logos_brasseries/242.1e03fcdc.png,"UNITED WE STAND FOR BETTER BEER . FIERCELY DEFIANT AND INDEPENDENT ",21
+201452,Royaume-Uni,images_capsules/201452.jpg,logos_brasseries/242.1e03fcdc.png,"UNITED WE STAND FOR BETTER BEER . FIERCELY DEFIANT AND INDEPENDENT ",21
 77117,Royaume-Uni,images_capsules/77117.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/51188618,21
 77117 (2),Royaume-Uni,images_capsules/77117 (2).jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51188618,21
 122355,Royaume-Uni,images_capsules/122355.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
 238035,France,images_capsules/238035.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
-291851,Plusieurs Pays,https://ddxwnzii69fzh.cloudfront.net/caps/296cf005-0ee6-4ad1-a206-498d882bcea1.jpg,https://crowncaps.info/common/nofactorysign.png,"GREAT BEER THAT'S GREAT FOR THE PLANET. PROUDLY COMMUNITY AND EMPLOYEE OWNED.",21
+291851,Plusieurs Pays,images_capsules/291851.jpg,https://crowncaps.info/common/nofactorysign.png,"GREAT BEER THAT'S GREAT FOR THE PLANET. PROUDLY COMMUNITY AND EMPLOYEE OWNED.",21
 123305,Belgique,images_capsules/123305.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
 153616,France,images_capsules/153616.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,21
 153616 (2),France,images_capsules/153616 (2).jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,21
@@ -898,7 +898,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 268043,Belgique,images_capsules/268043.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,23
 253052,Belgique,images_capsules/253052.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,23
 110092,Espagne,images_capsules/110092.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/R6464 BO,23
-227491,France,https://ddxwnzii69fzh.cloudfront.net/caps/8f9f5b7a-0309-4b7a-8bec-eccb97f7c0c5.jpg,https://crowncaps.info/common/nofactorysign.png,"côte d'azur france . un territoire riche d'emotions",23
+227491,France,images_capsules/227491.jpg,https://crowncaps.info/common/nofactorysign.png,"côte d'azur france . un territoire riche d'emotions",23
 177592,France,images_capsules/177592.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/biÃ¨re du comtÃ© . tradicioun dou pais nissart . despi 2012,23
 177595,France,images_capsules/177595.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/biÃ¨re du comtÃ© . tradicioun dou pais nissart . despi 2012,23
 177586,France,images_capsules/177586.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/biÃ¨re du comtÃ© . tradicioun dou pais nissart . despi 2012,23
@@ -929,9 +929,9 @@ id,country,image_url,logo_url,skirt_text,binder_page
 57798,Pays-Bas,images_capsules/57798.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5175,23
 283419,France,images_capsules/283419.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,23
 313752,France,images_capsules/313752.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,23
-88739,GrÃ¨ce,images_capsules/88739.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
-50855,GrÃ¨ce,images_capsules/50855.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
-264994,IndonÃ©sie,images_capsules/264994.jpg,logos_brasseries/209.b3d53bd2.png,logos_brasseries/*,23
+88739,Grèce,images_capsules/88739.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
+50855,Grèce,images_capsules/50855.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
+264994,Indonésie,images_capsules/264994.jpg,logos_brasseries/209.b3d53bd2.png,logos_brasseries/*,23
 290824,Italie,images_capsules/290824.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,23
 293288,Pays-Bas,images_capsules/293288.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,24
 146682,Belgique,images_capsules/146682.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,24
@@ -1046,7 +1046,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 37982,Islande,images_capsules/37982.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,27
 55192,Royaume-Uni,images_capsules/55192.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/P993066,27
 187998,France,images_capsules/187998.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,27
-85810,Etats-unis,images_capsules/85810.jpg,logos_brasseries/395.e2b2bfd2.png,logos_brasseries/*,27
+85810,Etats-Unis,images_capsules/85810.jpg,logos_brasseries/395.e2b2bfd2.png,logos_brasseries/*,27
 332961,France,images_capsules/332961.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/1250949,27
 50658,Italie,images_capsules/50658.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,27
 247147,France,images_capsules/247147.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,27
@@ -1332,7 +1332,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 139196,Belgique,images_capsules/139196.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
 139203,Belgique,images_capsules/139203.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
 139199,Belgique,images_capsules/139199.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
-135972,RÃ©publique TchÃ¨que,images_capsules/135972.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
+135972,République Tchèque,images_capsules/135972.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,2
 259507,Belgique,images_capsules/259507.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,2
 26176,Belgique,images_capsules/26176.jpg,logos_brasseries/160.ec18aa4a.png,logos_brasseries/10 10 10 10 10 10 10 10,2
 26176 (2),Belgique,images_capsules/26176 (2).jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/10 10 10 10 10 10 10 10,2
@@ -1351,7 +1351,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 33132,Portugal,images_capsules/33132.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,3
 33132 (2),Portugal,images_capsules/33132 (2).jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,3
 167096,Belgique,images_capsules/167096.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,3
-254949,GrÃ¨ce,images_capsules/254949.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,3
+254949,Grèce,images_capsules/254949.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,3
 86051,Belgique,images_capsules/86051.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,3
 181299,Royaume-Uni,images_capsules/181299.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,3
 126529,Belgique,images_capsules/126529.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51187103,3
@@ -1376,7 +1376,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 156159,Belgique,images_capsules/156159.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,3
 160352,Espagne,images_capsules/160352.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/KC02315 BO,3
 131441,Espagne,images_capsules/131441.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/BO KC02312,3
-129773,RÃ©publique TchÃ¨que,images_capsules/129773.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/(crÃ¨me),3
+129773,République Tchèque,images_capsules/129773.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/(crÃ¨me),3
 234734,Belgique,images_capsules/234734.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,3
 125271,Allemagne,images_capsules/125271.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,3
 125271 (2),Allemagne,images_capsules/125271 (2).jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,3
@@ -1409,7 +1409,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 185192,Autriche,images_capsules/185192.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/915733,4
 173103,Autriche,images_capsules/173103.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/915732,4
 153338,Allemagne,images_capsules/153338.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,4
-17518,ThaÃ¯lande,images_capsules/17518.jpg,logos_brasseries/395.e2b2bfd2.png,logos_brasseries/*,4
+17518,Thaïlande,images_capsules/17518.jpg,logos_brasseries/395.e2b2bfd2.png,logos_brasseries/*,4
 42543,Allemagne,images_capsules/42543.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,4
 152907,Espagne,images_capsules/152907.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/R8468 BO,4
 215971,Belgique,images_capsules/215971.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,4
@@ -1561,7 +1561,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 82016,France,images_capsules/82016.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,8
 69888,Belgique,images_capsules/69888.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,8
 307532,Pays-Bas,images_capsules/307532.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/25495,8
-209611,RÃ©publique TchÃ¨que,images_capsules/209611.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,8
+209611,République Tchèque,images_capsules/209611.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,8
 39569,Belgique,images_capsules/39569.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,8
 152579,Allemagne,images_capsules/152579.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,8
 307453,France,images_capsules/307453.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,8
@@ -1658,7 +1658,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 192045,France,images_capsules/192045.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,10
 161456,Belgique,images_capsules/161456.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,10
 161459,Belgique,images_capsules/161459.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,10
-281459,GrÃ¨ce,images_capsules/281459.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/225819,10
+281459,Grèce,images_capsules/281459.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/225819,10
 198805,Belgique,images_capsules/198805.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,10
 198805 (2),Belgique,images_capsules/198805 (2).jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,10
 172574,Belgique,images_capsules/172574.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,10
@@ -1696,7 +1696,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 173344,Allemagne,images_capsules/173344.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,11
 182938,Pays-Bas,images_capsules/182938.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/23670,11
 115253,Irelande,images_capsules/115253.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,11
-126667,PolynÃ©sie FranÃ§aise,images_capsules/126667.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,11
+126667,Polynésie Française,images_capsules/126667.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,11
 25582,Belgique,images_capsules/25582.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,11
 25582 (2),Belgique,images_capsules/25582 (2).jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,11
 29545,Allemagne,images_capsules/29545.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,11
@@ -1775,7 +1775,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 41248 (2),Allemagne,images_capsules/41248 (2).jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,13
 272788,Belgique,images_capsules/272788.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/26297,13
 202364,Espagne,images_capsules/202364.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/KC01306 BO,13
-114492,GrÃ¨ce,images_capsules/114492.jpg,logos_brasseries/617.8420aa21.png,logos_brasseries/*,13
+114492,Grèce,images_capsules/114492.jpg,logos_brasseries/617.8420aa21.png,logos_brasseries/*,13
 311858,Plusieurs Pays,images_capsules/311858.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,13
 185532,Belgique,images_capsules/185532.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,13
 23427,Belgique,images_capsules/23427.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,13
@@ -1799,7 +1799,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 111387,Italie,images_capsules/111387.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,14
 74761,Italie,images_capsules/74761.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5213,14
 74761 (2),Italie,images_capsules/74761 (2).jpg,https://crowncaps.info/signs/151,logos_brasseries/916511,14
-177783,RÃ©publique TchÃ¨que,images_capsules/177783.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,14
+177783,République Tchèque,images_capsules/177783.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,14
 16664,France,images_capsules/16664.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,14
 16664 (2),France,images_capsules/16664 (2).jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/* (mate),14
 229785,France,images_capsules/229785.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/1250080,14
@@ -1853,7 +1853,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 168097,Belgique,images_capsules/168097.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,15
 296372,Belgique,images_capsules/296372.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,15
 43484,Allemagne,images_capsules/43484.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/*,15
-153161,PÃ©rou,images_capsules/153161.jpg,logos_brasseries/9a77d3c3-1e77-4d87-b0c3-3936634afb4f.png,logos_brasseries/*,15
+153161,Pérou,images_capsules/153161.jpg,logos_brasseries/9a77d3c3-1e77-4d87-b0c3-3936634afb4f.png,logos_brasseries/*,15
 157513,Royaume-Uni,images_capsules/157513.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51221145,15
 152019,Royaume-Uni,images_capsules/152019.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51226441,15
 302818,Belgique,images_capsules/302818.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/51422546,15
@@ -1941,7 +1941,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 86885,Allemagne,images_capsules/86885.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
 156243,Belgique,images_capsules/156243.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,17
 172529,France,images_capsules/172529.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,17
-172607,RÃ©publique TchÃ¨que,images_capsules/172607.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,17
+172607,République Tchèque,images_capsules/172607.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,17
 64293,Italie,images_capsules/64293.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,17
 320468,France,images_capsules/320468.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
 144161,Belgique,images_capsules/144161.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
@@ -1950,8 +1950,8 @@ id,country,image_url,logo_url,skirt_text,binder_page
 203262,Mexique,images_capsules/203262.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,17
 109529,France,images_capsules/109529.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,17
 25376,Belgique,images_capsules/25376.jpg,logos_brasseries/160.ec18aa4a.png,logos_brasseries/*,17
-77308,RÃ©union,images_capsules/77308.jpg,logos_brasseries/744.23eab6d1.png,logos_brasseries/*,17
-77308 (2),RÃ©union,images_capsules/77308 (2).jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
+77308,Réunion,images_capsules/77308.jpg,logos_brasseries/744.23eab6d1.png,logos_brasseries/*,17
+77308 (2),Réunion,images_capsules/77308 (2).jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,17
 191535,Royaume-Uni,images_capsules/191535.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,17
 42557,Belgique,images_capsules/42557.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,17
 103567,France,images_capsules/103567.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/L'Eurélienne Brasserie de Chandres,17
@@ -2016,7 +2016,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 54405,Belgique,images_capsules/54405.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,19
 132837,France,images_capsules/132837.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,19
 8324,Belgique,images_capsules/8324.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,19
-134001,RÃ©publique TchÃ¨que,images_capsules/134001.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,19
+134001,République Tchèque,images_capsules/134001.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,19
 167462,Pays-Bas,images_capsules/167462.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,19
 119956,France,images_capsules/119956.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,19
 65221,Belgique,images_capsules/65221.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,19
@@ -2047,7 +2047,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 159471 (2),Plusieurs Pays,images_capsules/159471 (2).jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/1069,20
 206479 (3),France,images_capsules/206479 (3).jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,20
 332052,Italie,images_capsules/332052.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,20
-111373,RÃ©publique TchÃ¨que,images_capsules/111373.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,20
+111373,République Tchèque,images_capsules/111373.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,20
 157080,France,images_capsules/157080.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,20
 23764,Allemagne,images_capsules/23764.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,20
 257868,Belgique,images_capsules/257868.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,20
@@ -2144,7 +2144,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 115189,France,images_capsules/115189.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,22
 165618,France,images_capsules/165618.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,22
 117729,Royaume-Uni,images_capsules/117729.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/* (dap int),22
-32980,SlovÃ©nie,images_capsules/32980.jpg,logos_brasseries/89.e54f6513.png,logos_brasseries/*,22
+32980,Slovénie,images_capsules/32980.jpg,logos_brasseries/89.e54f6513.png,logos_brasseries/*,22
 170894,France,images_capsules/170894.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,22
 257110,France,images_capsules/257110.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,23
 102376,Italie,images_capsules/102376.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,23
@@ -2185,8 +2185,8 @@ id,country,image_url,logo_url,skirt_text,binder_page
 57798,Pays-Bas,images_capsules/57798.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5175,23
 283419,France,images_capsules/283419.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,23
 313752,France,images_capsules/313752.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,23
-88739,GrÃ¨ce,images_capsules/88739.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
-50855,GrÃ¨ce,images_capsules/50855.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
+88739,Grèce,images_capsules/88739.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
+50855,Grèce,images_capsules/50855.jpg,logos_brasseries/563.5e5e08e3.png,logos_brasseries/*,23
 264994,IndonÃ©sie,images_capsules/264994.jpg,logos_brasseries/209.b3d53bd2.png,logos_brasseries/*,23
 290824,Italie,images_capsules/290824.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,23
 293288,Pays-Bas,images_capsules/293288.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,24
@@ -2302,7 +2302,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 37982,Islande,images_capsules/37982.jpg,logos_brasseries/151.7fc2f5a4.png,logos_brasseries/*,27
 55192,Royaume-Uni,images_capsules/55192.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/P993066,27
 187998,France,images_capsules/187998.jpg,https://crowncaps.info/common/nofactorysign.png,logos_brasseries/*,27
-85810,Etats-unis,images_capsules/85810.jpg,logos_brasseries/395.e2b2bfd2.png,logos_brasseries/*,27
+85810,Etats-Unis,images_capsules/85810.jpg,logos_brasseries/395.e2b2bfd2.png,logos_brasseries/*,27
 332961,France,images_capsules/332961.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/1250949,27
 50658,Italie,images_capsules/50658.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,27
 247147,France,images_capsules/247147.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,27
@@ -2515,6 +2515,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 161476,Belgique,images_capsules/161476.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5211,29
 
 >>>>>>> ec23dd40a15c93aab5373f444f5a2451be78a606
+
 
 
 
