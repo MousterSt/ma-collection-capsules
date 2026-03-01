@@ -31492,16 +31492,18 @@
     
 </div>
 <script>
-// 1. Fonction pour créer le menu ET mettre à jour les stats globales
+// 1. Fonction pour créer le menu, compter les capsules et mettre à jour les stats
 function generateCountryMenu() {
     const grid = document.getElementById('capsuleGrid');
+    if (!grid) return;
     const cards = Array.from(grid.getElementsByClassName('card'));
     const select = document.getElementById('filterCountry');
-    const statsContainer = document.querySelector('.stats'); // La zone de texte 📊
+    const statsContainer = document.querySelector('.stats');
     
     let countryCounts = {};
     let totalCapsules = cards.length;
     
+    // On compte les capsules par pays
     cards.forEach(card => {
         let c = card.getAttribute('data-country');
         if (c) {
@@ -31512,33 +31514,24 @@ function generateCountryMenu() {
     let countries = Object.keys(countryCounts).sort();
     let totalCountries = countries.length;
 
-    // On trie par ordre alphabétique et on ajoute au menu
-    countries.sort().forEach(country => {
-        let option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        select.appendChild(option);
-    });
-}
-// Mise à jour automatique de la bannière 📊 en haut
+    // Mise à jour de la bannière de statistiques en haut
     if (statsContainer) {
         statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${totalCountries}</strong> pays`;
     }
-// Remplissage du menu déroulant
-    select.innerHTML = '<option value="">Tous les pays</option>';
-    countries.forEach(country => {
-        let option = document.createElement('option');
-        option.value = country;
-        option.textContent = `${country} (${countryCounts[country]})`;
-        select.appendChild(option);
-    });
+
+    // Remplissage du menu déroulant avec les compteurs (ex: France (50))
+    if (select) {
+        select.innerHTML = '<option value="">Tous les pays</option>';
+        countries.forEach(country => {
+            let option = document.createElement('option');
+            option.value = country;
+            option.textContent = `${country} (${countryCounts[country]})`;
+            select.appendChild(option);
+        });
+    }
 }
-// 2. Le chargement reste identique
-window.onload = function() {
-    generateCountryMenu();
-    filterAndSort();
-};
-// Fonction unique pour Filtrer (ID + Pays) et Trier
+
+// 2. Fonction pour Filtrer (ID + Pays) et Trier
 function filterAndSort() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const countryFilter = document.getElementById('filterCountry').value.toLowerCase();
@@ -31550,33 +31543,30 @@ function filterAndSort() {
         const id = card.getAttribute('data-id').toLowerCase();
         const country = (card.getAttribute('data-country') || "").toLowerCase();
 
-        // On vérifie si ça match la recherche ET le pays sélectionné
         const matchesSearch = id.includes(input);
         const matchesCountry = (countryFilter === "") || (country === countryFilter);
 
         card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
     });
 
-  // Tri des cartes
+    // Tri des cartes
     cards.sort((a, b) => {
         if (sortOrder === 'id') {
-            // Tri numérique pour les IDs
             let valA = parseInt(a.getAttribute('data-id')) || 0;
             let valB = parseInt(b.getAttribute('data-id')) || 0;
             return valA - valB;
         } else {
-            // Tri alphabétique pour les pays (data-country)
             let valA = (a.getAttribute('data-country') || "").toLowerCase();
             let valB = (b.getAttribute('data-country') || "").toLowerCase();
             return valA.localeCompare(valB, 'fr', {sensitivity: 'base'});
         }
     });
 
-    // On ré-injecte dans la grille pour appliquer le tri
+    // Ré-injection dans la grille
     cards.forEach(card => grid.appendChild(card));
 }
 
-// Lancement automatique au chargement
+// 3. Lancement unique au chargement
 window.onload = function() {
     generateCountryMenu();
     filterAndSort();
@@ -31584,6 +31574,7 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
 
 
