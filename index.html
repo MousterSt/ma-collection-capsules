@@ -49,6 +49,9 @@
     <div class="stats">📊 <strong>1257</strong> capsules | 🌍 <strong>44</strong> pays</div>
     <div class="controls">
         <input type="text" id="searchInput" onkeyup="filterAndSort()" placeholder="Rechercher un ID...">
+        <select id="countrySelect" onchange="filterData()">
+    <option value="">Tous les pays (Filtrer)</option>
+</select>
         <select id="sortOrder" onchange="filterAndSort()">
             <option value="id">Trier par ID</option>
             <option value="country">Trier par Pays</option>
@@ -31508,7 +31511,34 @@ function filterAndSort() {{
     cards.forEach(card => grid.appendChild(card));
 }}
 window.onload = filterAndSort;
+                // Cette fonction crée la liste des pays automatiquement
+function populateCountries() {
+    const select = document.getElementById('countrySelect');
+    // On récupère les pays, on enlève les doublons et on trie par A-Z
+    const countries = [...new Set(allCapsules.map(c => c.country))].filter(x => x).sort();
+    
+    countries.forEach(country => {
+        let opt = document.createElement('option');
+        opt.value = country;
+        opt.textContent = country;
+        select.appendChild(opt);
+    });
+}
+
+// Cette fonction remplace ta fonction filterData actuelle
+function filterData() {
+    const txt = document.getElementById('searchInput').value.toLowerCase();
+    const selectedCountry = document.getElementById('countrySelect').value;
+
+    const filtered = allCapsules.filter(c => {
+        const matchTxt = c.id.includes(txt) || (c.skirt && c.skirt.toLowerCase().includes(txt));
+        const matchCountry = selectedCountry === "" || c.country === selectedCountry;
+        return matchTxt && matchCountry;
+    });
+    display(filtered); // Affiche le résultat du double filtrage
+}
 </script>
 </body>
 </html>
+
 
