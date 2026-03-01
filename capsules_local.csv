@@ -2011,7 +2011,6 @@ id,country,image_url,logo_url,skirt_text,binder_page
 123904,France,images_capsules/123904.jpg,logos_brasseries/127.b7119950.png,logos_brasseries/*,22
 48112,Belgique,images_capsules/48112.jpg,logos_brasseries/243.7595956f.png,logos_brasseries/*,19
 257970,Belgique,images_capsules/257970.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/40022917,19
-251325,Russie,https://ddxwnzii69fzh.cloudfront.net/caps/b9f6e055-4759-431c-b28b-2ea506723524.jpg,logos_brasseries/8dbf64ed-4f4e-431e-81f6-30bd9ea057f2.png,"-> -> -> ->",19
 222962,Allemagne,images_capsules/222962.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,19
 35761,Allemagne,images_capsules/35761.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/*,19
 54405,Belgique,images_capsules/54405.jpg,logos_brasseries/320.9759fea6.png,logos_brasseries/*,19
@@ -2124,7 +2123,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 77467,France,images_capsules/77467.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,22
 114848,Belgique,images_capsules/114848.jpg,logos_brasseries/142.88b7ba50.png,logos_brasseries/*,22
 85629,Allemagne,images_capsules/85629.jpg,logos_brasseries/147.2c4a170c.png,logos_brasseries/www.crewrepublic.de,22
-76977,Royaume-Uni,https://ddxwnzii69fzh.cloudfront.net/caps/76977.aaf84ea5.jpeg,logos_brasseries/242.1e03fcdc.png,"Visit us at brewdog.com > Craft beer for the people",22
+76977,Royaume-Uni,images_capsules/76977.jpg,logos_brasseries/242.1e03fcdc.png,"Visit us at brewdog.com > Craft beer for the people",22
 219073,France,images_capsules/219073.jpg,logos_brasseries/242.1e03fcdc.png,logos_brasseries/*,22
 281742,Pays-Bas,images_capsules/281742.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,22
 70386,France,images_capsules/70386.jpg,logos_brasseries/371.a86033d3.png,logos_brasseries/*,22
@@ -2516,5 +2515,6 @@ id,country,image_url,logo_url,skirt_text,binder_page
 161476,Belgique,images_capsules/161476.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/5211,29
 
 >>>>>>> ec23dd40a15c93aab5373f444f5a2451be78a606
+
 
 
