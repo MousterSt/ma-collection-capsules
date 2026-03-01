@@ -31537,8 +31537,31 @@ function filterData() {
     });
     display(filtered); // Affiche le résultat du double filtrage
 }
+                        // On attend 1 seconde que les données soient chargées, puis on trie
+setTimeout(() => {
+    if (typeof allCapsules !== 'undefined' && allCapsules.length > 0) {
+        // 1. On trie par ID
+        allCapsules.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+        
+        // 2. On remplit le menu des pays
+        const select = document.getElementById('countrySelect');
+        if (select) {
+            const countries = [...new Set(allCapsules.map(c => c.country))].filter(x => x).sort();
+            countries.forEach(country => {
+                let opt = document.createElement('option');
+                opt.value = country;
+                opt.textContent = country;
+                select.appendChild(opt);
+            });
+        }
+        
+        // 3. On rafraîchit l'affichage
+        display(allCapsules); 
+    }
+}, 1000);
 </script>
 </body>
 </html>
+
 
 
