@@ -92,7 +92,7 @@
 // 1. CHARGEMENT DU CSV
 async function loadCapsules() {
     try {
-        const response = await fetch('votre_fichier.csv'); // <-- Vérifie bien le nom exact ici
+        const response = await fetch('capsules_local.csv'); // <-- Vérifie bien le nom exact ici
         const data = await response.text();
         const capsules = parseCSV(data);
         renderGrid(capsules);
@@ -221,3 +221,4 @@ function filterAndSort() {
 // LANCEMENT
 window.onload = loadCapsules;
 </script>
+
