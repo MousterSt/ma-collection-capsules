@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 id,country,image_url,logo_url,skirt_text,binder_page
 17788,Plusieurs Pays,images_capsules/17788.jpg,logos_brasseries/141.82857523.png,*,1
 88712,Plusieurs Pays,images_capsules/88712.jpg,logos_brasseries/230.8f1b7629.png,Alltech Lexington Brewing Company Lexington Kentucky,30
@@ -2517,6 +2516,7 @@ id,country,image_url,logo_url,skirt_text,binder_page
 309256,Belgique,images_capsules/309256.jpg,logos_brasseries/230.8f1b7629.png,logos_brasseries/Big Size,BS
 
 >>>>>>> ec23dd40a15c93aab5373f444f5a2451be78a606
+
 
 
 
