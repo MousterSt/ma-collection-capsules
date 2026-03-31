@@ -53,6 +53,9 @@
             <select id="filterCountry" onchange="filterAndSort()">
                 <option value="">Tous les pays</option>
             </select>
+            <select id="filterPage" onchange="filterAndSort()">
+    <option value="">Toutes les pages</option>
+</select>
 
            <select id="sortOrder" onchange="filterAndSort()">
     <option value="id">Trier par ID</option>
@@ -31770,62 +31773,86 @@
 </div>
 <script>
 // 1. Fonction pour créer le menu, compter les capsules et mettre à jour les stats
-function generateCountryMenu() {
+function generateFiltersMenu() {
     const grid = document.getElementById('capsuleGrid');
-    const select = document.getElementById('filterCountry');
+    const selectCountry = document.getElementById('filterCountry');
+    const selectPage = document.getElementById('filterPage');
     const statsContainer = document.querySelector('.stats');
     
-    if (!grid || !select) return;
+    if (!grid || !selectCountry || !selectPage) return;
 
     const cards = Array.from(grid.getElementsByClassName('card'));
     let countryCounts = {};
+    let pagesFound = new Set();
     let totalCapsules = cards.length;
     
     cards.forEach(card => {
+        // Pour les pays
         let c = card.getAttribute('data-country');
-        if (c) {
-            countryCounts[c] = (countryCounts[c] || 0) + 1;
+        if (c) countryCounts[c] = (countryCounts[c] || 0) + 1;
+
+        // Pour les pages (on extrait le texte de la span)
+        let pSpan = card.querySelector('.footer span');
+        if (pSpan) {
+            let pText = pSpan.textContent.replace('Page ', '').trim();
+            pagesFound.add(pText);
         }
     });
 
-    // Tri alphabétique qui gère les accents (A, B, C, É, E...)
-    let countries = Object.keys(countryCounts).sort((a, b) => {
-        return a.localeCompare(b, 'fr', { sensitivity: 'base' });
-    });
-
-    // Mise à jour de la bannière 📊
-    if (statsContainer) {
-        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${countries.length}</strong> pays`;
-    }
-
-    // Remplissage du menu
-    select.innerHTML = '<option value="">Tous les pays</option>';
+    // --- Remplissage Pays ---
+    let countries = Object.keys(countryCounts).sort((a, b) => a.localeCompare(b, 'fr'));
+    selectCountry.innerHTML = '<option value="">Tous les pays</option>';
     countries.forEach(country => {
         let option = document.createElement('option');
         option.value = country;
         option.textContent = `${country} (${countryCounts[country]})`;
-        select.appendChild(option);
+        selectCountry.appendChild(option);
     });
+
+    // --- Remplissage Pages (Tri intelligent) ---
+    let sortedPages = Array.from(pagesFound).sort((a, b) => {
+        let numA = parseInt(a), numB = parseInt(b);
+        if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+        if (!isNaN(numA)) return -1;
+        if (!isNaN(numB)) return 1;
+        return a.localeCompare(b, 'fr');
+    });
+
+    selectPage.innerHTML = '<option value="">Toutes les pages</option>';
+    sortedPages.forEach(page => {
+        let option = document.createElement('option');
+        option.value = page;
+        option.textContent = `Page ${page}`;
+        selectPage.appendChild(option);
+    });
+
+    // Mise à jour stats
+    if (statsContainer) {
+        statsContainer.innerHTML = `📊 <strong>${totalCapsules}</strong> capsules | 🌍 <strong>${countries.length}</strong> pays`;
+    }
 }
 
 // 2. Fonction pour Filtrer et Trier
 function filterAndSort() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const countryFilter = document.getElementById('filterCountry').value;
+    const pageFilter = document.getElementById('filterPage').value; // Nouveau
     const sortOrder = document.getElementById('sortOrder').value;
     const grid = document.getElementById('capsuleGrid');
     
     if (!grid) return;
     const cards = Array.from(grid.getElementsByClassName('card'));
 
-    // 1. Filtrage
     cards.forEach(card => {
         const id = (card.getAttribute('data-id') || "").toLowerCase();
         const country = card.getAttribute('data-country') || "";
+        const pageText = card.querySelector('.footer span').textContent.replace('Page ', '').trim();
+
         const matchesSearch = id.includes(input);
         const matchesCountry = (countryFilter === "") || (country === countryFilter);
-        
-        card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
+        const matchesPage = (pageFilter === "") || (pageText === pageFilter); // Nouveau
+
+        card.style.display = (matchesSearch && matchesCountry && matchesPage) ? "" : "none";
     });
 
     // 2. Tri
@@ -31863,7 +31890,7 @@ function filterAndSort() {
 
 // 3. Lancement au chargement
 window.onload = function() {
-    generateCountryMenu();
+    generateFiltersMenu(); // Nom mis à jour
     filterAndSort();
 };
 </script>
