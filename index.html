@@ -54,10 +54,10 @@
                 <option value="">Tous les pays</option>
             </select>
 
-            <select id="sortOrder" onchange="filterAndSort()">
-                <option value="id">Trier par ID</option>
-                <option value="country">Trier par Pays</option>
-            </select>
+           <select id="sortOrder" onchange="filterAndSort()">
+    <option value="id">Trier par ID</option>
+    <option value="country">Trier par Pays</option>
+    <option value="page">Trier par Page</option> </select>
 
             <button class="print-btn" onclick="window.print()">🖨️ Imprimer la liste</button>
         </div>
@@ -31818,29 +31818,46 @@ function filterAndSort() {
     if (!grid) return;
     const cards = Array.from(grid.getElementsByClassName('card'));
 
+    // 1. Filtrage
     cards.forEach(card => {
         const id = (card.getAttribute('data-id') || "").toLowerCase();
         const country = card.getAttribute('data-country') || "";
-
         const matchesSearch = id.includes(input);
         const matchesCountry = (countryFilter === "") || (country === countryFilter);
-
+        
         card.style.display = (matchesSearch && matchesCountry) ? "" : "none";
     });
 
-    // Tri des cartes
+    // 2. Tri
     cards.sort((a, b) => {
         if (sortOrder === 'id') {
             let valA = parseInt(a.getAttribute('data-id')) || 0;
             let valB = parseInt(b.getAttribute('data-id')) || 0;
             return valA - valB;
-        } else {
+        } 
+        else if (sortOrder === 'country') {
             let valA = a.getAttribute('data-country') || "";
             let valB = b.getAttribute('data-country') || "";
             return valA.localeCompare(valB, 'fr', { sensitivity: 'base' });
+        } 
+        else if (sortOrder === 'page') {
+            // On cherche le texte dans la span du footer (ex: "Page 30")
+            const textA = a.querySelector('.footer span').textContent;
+            const textB = b.querySelector('.footer span').textContent;
+            
+            // On extrait uniquement les chiffres via une expression régulière
+            const numA = parseInt(textA.replace(/\D/g, '')) || 0;
+            const numB = parseInt(textB.replace(/\D/g, '')) || 0;
+            
+            // Si les pages sont identiques, on trie par ID pour rester ordonné
+            if (numA === numB) {
+                return (parseInt(a.getAttribute('data-id')) || 0) - (parseInt(b.getAttribute('data-id')) || 0);
+            }
+            return numA - numB;
         }
     });
 
+    // 3. Réorganisation dans le DOM
     cards.forEach(card => grid.appendChild(card));
 }
 
